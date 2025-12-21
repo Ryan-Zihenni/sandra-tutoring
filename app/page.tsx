@@ -68,6 +68,26 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
   const NavLinks = ({ onClick }: { onClick?: () => void }) => (
     <>
       <a href="#about" onClick={onClick} className="nav-link">
@@ -83,7 +103,10 @@ export default function Home() {
   );
 
   return (
-    <main style={{ background: COLORS.bg, color: COLORS.navy }} className="min-h-screen">
+    <main
+      style={{ background: COLORS.bg, color: COLORS.navy }}
+      className="min-h-screen"
+    >
       {/* Top Nav */}
       <header className="sticky top-0 z-50 border-b bg-white/70 backdrop-blur">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -115,9 +138,18 @@ export default function Home() {
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
-            <span className="block w-5 h-[2px] mb-1" style={{ background: COLORS.navy }} />
-            <span className="block w-5 h-[2px] mb-1" style={{ background: COLORS.navy }} />
-            <span className="block w-5 h-[2px]" style={{ background: COLORS.navy }} />
+            <span
+              className="block w-5 h-[2px] mb-1"
+              style={{ background: COLORS.navy }}
+            />
+            <span
+              className="block w-5 h-[2px] mb-1"
+              style={{ background: COLORS.navy }}
+            />
+            <span
+              className="block w-5 h-[2px]"
+              style={{ background: COLORS.navy }}
+            />
           </button>
         </div>
 
@@ -148,11 +180,10 @@ export default function Home() {
 
           <div className="mt-6 space-y-2 max-w-3xl mx-auto">
             <p className="subhead">
-              Helping students build confidence, fluency, and strong foundations in English.
+              Helping students build confidence, fluency, and strong foundations in
+              English.
             </p>
-            <p className="support">
-              Learning English should feel supportive and calm.
-            </p>
+            <p className="support">Learning English should feel supportive and calm.</p>
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
@@ -172,7 +203,9 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-4 text-sm opacity-80">No commitment. Just a conversation.</div>
+          <div className="mt-4 text-sm opacity-80">
+            No commitment. Just a conversation.
+          </div>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3 text-sm">
             <div className="chip">
@@ -212,23 +245,24 @@ export default function Home() {
 
             <div className="mt-5 space-y-4 body-copy">
               <p>
-                Hi - I’m Sandra Mastromarino. I’ve been teaching English as a Second Language
-                for over 20 years, helping students from all backgrounds build confidence,
-                clarity, and strong foundations in English. I earned my Master’s degree in
-                Teaching from Fairleigh Dickinson University and have spent my career both in
-                the classroom and working one-on-one with students.
+                Hi - I’m Sandra Mastromarino. I’ve been teaching English as a Second
+                Language for over 20 years, helping students from all backgrounds build
+                confidence, clarity, and strong foundations in English. I earned my
+                Master’s degree in Teaching from Fairleigh Dickinson University and have
+                spent my career both in the classroom and working one-on-one with
+                students.
               </p>
 
               <p>
-                I began my ESL journey at the New Jersey Japanese School and have since taught
-                in both private and public school settings across New Jersey. I work with
-                learners of all ages, from young children to adults.
+                I began my ESL journey at the New Jersey Japanese School and have since
+                taught in both private and public school settings across New Jersey. I
+                work with learners of all ages, from young children to adults.
               </p>
 
               <p>
-                I’m known for being warm, direct, and deeply invested in my students’ progress.
-                I identify areas of weakness and work through them thoughtfully, while keeping
-                learning engaging and encouraging.
+                I’m known for being warm, direct, and deeply invested in my students’
+                progress. I identify areas of weakness and work through them thoughtfully,
+                while keeping learning engaging and encouraging.
               </p>
 
               <ul className="mt-5 space-y-2">
@@ -248,15 +282,21 @@ export default function Home() {
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="card">
               <div className="card-title">1. Intro call</div>
-              <p className="card-body">A short conversation to understand goals, level, and needs.</p>
+              <p className="card-body">
+                A short conversation to understand goals, level, and needs.
+              </p>
             </div>
             <div className="card">
               <div className="card-title">2. Personalized plan</div>
-              <p className="card-body">A focused plan built around the areas that matter most.</p>
+              <p className="card-body">
+                A focused plan built around the areas that matter most.
+              </p>
             </div>
             <div className="card">
               <div className="card-title">3. Consistent progress</div>
-              <p className="card-body">Structured lessons, targeted feedback, real improvement.</p>
+              <p className="card-body">
+                Structured lessons, targeted feedback, real improvement.
+              </p>
             </div>
           </div>
         </section>
@@ -346,9 +386,10 @@ export default function Home() {
         .chip {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
           border: 1px solid rgba(26,42,79,0.18);
-          padding: 10px 14px;
+          padding: 12px 14px;
           border-radius: 9999px;
           background: rgba(255,255,255,0.35);
         }
