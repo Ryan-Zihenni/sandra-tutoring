@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const testimonials = [
@@ -98,7 +100,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold mb-4">Meet Your Tutor</h2>
 
             <p className="text-gray-700 leading-relaxed">
-              Hi - I’m Sandra Mastromarino. I’ve been teaching English as a Second Language
+              Hi — I’m Sandra Mastromarino. I’ve been teaching English as a Second Language
               for over 20 years, helping students from all backgrounds build confidence,
               clarity, and strong foundations in English. I earned my Master’s degree in
               Teaching from Fairleigh Dickinson University and have spent my career both
@@ -157,11 +159,11 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-6">What Families Say</h2>
 
           <div className="relative overflow-hidden border rounded-xl">
-            <div className="marquee flex gap-6 px-6 py-10">
+            <div className="marquee flex gap-6 px-6 py-10 whitespace-nowrap">
               {loop.map((t, i) => (
                 <div
                   key={i}
-                  className="w-[320px] shrink-0 rounded-xl border p-5 bg-white"
+                  className="w-[320px] shrink-0 rounded-xl border p-5 bg-white whitespace-normal"
                 >
                   <p className="text-gray-700 leading-relaxed">“{t.quote}”</p>
                   <p className="mt-4 text-sm text-gray-600 font-medium">{t.name}</p>
@@ -175,7 +177,8 @@ export default function Home() {
         <section id="contact" className="mt-20 border-t pt-12">
           <h2 className="text-2xl font-semibold mb-3">Contact</h2>
           <p className="text-gray-700">
-            Email: <span className="font-medium">youremail@example.com</span>
+            Email:{" "}
+            <span className="font-medium">sandrasuzz00@gmail.com</span>
           </p>
         </section>
       </div>
