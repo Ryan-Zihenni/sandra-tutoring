@@ -39,44 +39,52 @@ export default function Home() {
   const loop = [...testimonials, ...testimonials];
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-[#FFF2EF] text-[#1A2A4F]">
       {/* Hero */}
-      <div className="bg-gradient-to-b from-amber-50/70 to-white">
+      <div className="bg-gradient-to-b from-[#FFDBB6]/60 to-[#FFF2EF]">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <h1 className="text-4xl md:text-5xl font-semibold mb-4">
             Personalized English Tutoring
           </h1>
 
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#1A2A4F]/80 max-w-2xl mx-auto">
             Helping students build confidence, fluency, and strong foundations in English.
           </p>
-          <p className="text-sm text-gray-600 mt-2">
+
+          <p className="text-sm text-[#1A2A4F]/70 mt-2">
             Learning English should feel supportive, not stressful.
           </p>
 
           <div className="mt-10 flex justify-center gap-3">
             <a
               href="#contact"
-              className="rounded-full bg-black text-white px-7 py-3 font-medium hover:bg-gray-800 transition"
+              className="rounded-full bg-[#1A2A4F] text-white px-7 py-3 font-medium hover:opacity-90 transition"
             >
               Book a Free Intro Call
             </a>
+
             <a
               href="#how"
-              className="rounded-full border border-gray-300 px-7 py-3 font-medium hover:border-gray-400 transition"
+              className="rounded-full border border-[#1A2A4F]/30 px-7 py-3 font-medium hover:border-[#1A2A4F]/50 transition"
             >
               How it works
             </a>
           </div>
 
-          <div className="mt-3 text-sm text-gray-600">
+          <div className="mt-3 text-sm text-[#1A2A4F]/70">
             No commitment. Just a conversation.
           </div>
 
-          <div className="mt-10 flex justify-center gap-2 text-sm text-gray-600">
-            <span className="rounded-full border px-3 py-1">Online or in-person</span>
-            <span className="rounded-full border px-3 py-1">Kids, teens, adults</span>
-            <span className="rounded-full border px-3 py-1">ESL focused</span>
+          <div className="mt-10 flex justify-center gap-2 text-sm text-[#1A2A4F]/70">
+            <span className="rounded-full border border-[#F7A5A5] px-3 py-1">
+              Online or in-person
+            </span>
+            <span className="rounded-full border border-[#F7A5A5] px-3 py-1">
+              Kids, teens, adults
+            </span>
+            <span className="rounded-full border border-[#F7A5A5] px-3 py-1">
+              ESL focused
+            </span>
           </div>
         </div>
       </div>
@@ -85,7 +93,7 @@ export default function Home() {
         {/* About */}
         <section className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center md:justify-start">
-            <div className="rounded-2xl border p-3 shadow-sm bg-white">
+            <div className="rounded-2xl border border-[#F7A5A5] p-3 bg-white">
               <Image
                 src="/tutor.jpg"
                 alt="Sandra Mastromarino"
@@ -99,7 +107,7 @@ export default function Home() {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Meet Your Tutor</h2>
 
-            <p className="text-gray-700 leading-relaxed">
+            <p className="leading-relaxed text-[#1A2A4F]/80">
               Hi — I’m Sandra Mastromarino. I’ve been teaching English as a Second Language
               for over 20 years, helping students from all backgrounds build confidence,
               clarity, and strong foundations in English. I earned my Master’s degree in
@@ -107,19 +115,19 @@ export default function Home() {
               in the classroom and working one-on-one with students.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="leading-relaxed text-[#1A2A4F]/80 mt-4">
               I began my ESL journey at the New Jersey Japanese School and have since taught
               in both private and public school settings across New Jersey. I work with
               learners of all ages, from young children to adults.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="leading-relaxed text-[#1A2A4F]/80 mt-4">
               I’m known for being warm, direct, and deeply invested in my students’ progress.
               I identify areas of weakness and work through them thoughtfully, while keeping
               learning engaging and encouraging.
             </p>
 
-            <ul className="mt-6 space-y-2 text-gray-700">
+            <ul className="mt-6 space-y-2 text-[#1A2A4F]/80">
               <li>• 20+ years of ESL teaching experience</li>
               <li>• Master’s degree in Teaching</li>
               <li>• Private and public school experience</li>
@@ -133,24 +141,19 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-8">How it works</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-xl border p-6">
-              <div className="font-semibold">1. Intro call</div>
-              <p className="text-gray-700 mt-2">
-                A short conversation to understand goals, level, and needs.
-              </p>
-            </div>
-            <div className="rounded-xl border p-6">
-              <div className="font-semibold">2. Personalized plan</div>
-              <p className="text-gray-700 mt-2">
-                A focused plan built around the areas that matter most.
-              </p>
-            </div>
-            <div className="rounded-xl border p-6">
-              <div className="font-semibold">3. Consistent progress</div>
-              <p className="text-gray-700 mt-2">
-                Structured lessons, targeted feedback, real improvement.
-              </p>
-            </div>
+            {[
+              ["1. Intro call", "A short conversation to understand goals, level, and needs."],
+              ["2. Personalized plan", "A focused plan built around the areas that matter most."],
+              ["3. Consistent progress", "Structured lessons, targeted feedback, real improvement."],
+            ].map(([title, text]) => (
+              <div
+                key={title}
+                className="rounded-xl border border-[#FFDBB6] p-6 bg-white"
+              >
+                <div className="font-semibold">{title}</div>
+                <p className="mt-2 text-[#1A2A4F]/80">{text}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -158,15 +161,19 @@ export default function Home() {
         <section className="mt-20">
           <h2 className="text-2xl font-semibold mb-6">What Families Say</h2>
 
-          <div className="relative overflow-hidden border rounded-xl">
+          <div className="relative overflow-hidden border border-[#FFDBB6] rounded-xl bg-white">
             <div className="marquee flex gap-6 px-6 py-10 whitespace-nowrap">
               {loop.map((t, i) => (
                 <div
                   key={i}
-                  className="w-[320px] shrink-0 rounded-xl border p-5 bg-white whitespace-normal"
+                  className="w-[320px] shrink-0 rounded-xl border border-[#F7A5A5] p-5 bg-white whitespace-normal"
                 >
-                  <p className="text-gray-700 leading-relaxed">“{t.quote}”</p>
-                  <p className="mt-4 text-sm text-gray-600 font-medium">{t.name}</p>
+                  <p className="leading-relaxed text-[#1A2A4F]/80">
+                    “{t.quote}”
+                  </p>
+                  <p className="mt-4 text-sm text-[#1A2A4F]/70 font-medium">
+                    {t.name}
+                  </p>
                 </div>
               ))}
             </div>
@@ -174,9 +181,9 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mt-20 border-t pt-12">
+        <section id="contact" className="mt-20 border-t border-[#FFDBB6] pt-12">
           <h2 className="text-2xl font-semibold mb-3">Contact</h2>
-          <p className="text-gray-700">
+          <p className="text-[#1A2A4F]/80">
             Email:{" "}
             <span className="font-medium">sandrasuzz00@gmail.com</span>
           </p>
