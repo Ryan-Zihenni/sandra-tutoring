@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 const COLORS = {
-  bg: "#FFF2EF", // lightest
-  navy: "#1A2A4F", // darkest for text
-  pink: "#F7A5A5", // accent
-  peach: "#FFDBB6", // secondary accent
+  bg: "#FFF6ED", // warmer cream, closer to card
+  navy: "#1A2A4F", // keep for strong readability
+  pink: "#EFA8A0", // slightly desaturated
+  peach: "#F5D6B8", // softer, more paper-like
 };
 
 const testimonials = [
@@ -228,13 +228,13 @@ export default function Home() {
       <section id="about" className="max-w-5xl mx-auto px-6 pb-24 pt-10">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center md:justify-start">
-            <div className="rounded-2xl border p-3 bg-white shadow-sm w-full max-w-[420px]">
+            <div className="portrait-card w-full max-w-[400px]">
               <Image
                 src="/tutor.jpg"
                 alt="Sandra Mastromarino"
                 width={520}
                 height={650}
-                className="rounded-xl object-cover w-full h-auto"
+                className="portrait-img"
                 priority
               />
             </div>
@@ -391,7 +391,7 @@ export default function Home() {
           border: 1px solid rgba(26,42,79,0.18);
           padding: 12px 14px;
           border-radius: 9999px;
-          background: rgba(255,255,255,0.35);
+          background: rgba(255,255,255,0.5);
         }
         .chip-dot {
           width: 8px;
@@ -402,10 +402,10 @@ export default function Home() {
 
         /* Cards */
         .card {
-          border: 1px solid rgba(26,42,79,0.18);
+          border: 1px solid rgba(26,42,79,0.16);
           border-radius: 18px;
           padding: 18px;
-          background: rgba(255,255,255,0.5);
+          background: rgba(255,255,255,0.65);
         }
         .card-title {
           font-weight: 700;
@@ -413,6 +413,22 @@ export default function Home() {
         .card-body {
           margin-top: 8px;
           opacity: 0.85;
+        }
+
+        /* Portrait */
+        .portrait-card {
+          border: 1px solid rgba(26,42,79,0.16);
+          border-radius: 22px;
+          padding: 14px;
+          background: rgba(255,255,255,0.6);
+          box-shadow: 0 6px 16px rgba(26,42,79,0.08);
+        }
+        .portrait-img {
+          width: 100%;
+          height: auto;
+          border-radius: 16px;
+          object-fit: cover;
+          filter: brightness(1.04) contrast(0.96) saturate(0.95);
         }
 
         /* Marquee */
