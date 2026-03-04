@@ -202,5 +202,5 @@ After making changes:
 
 This site is deployed via Vercel. Any changes pushed to the `main` branch will automatically deploy to production.
 
-- **Production URL:** [Your production URL]
+- **Production URL:** sandra-tutoring.vercel.app
 - **Staging URL:** Push to `staging` branch for preview deployments
