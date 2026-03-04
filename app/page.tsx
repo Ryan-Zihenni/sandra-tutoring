@@ -25,19 +25,19 @@ export default function App() {
       author: "Adult ESL student",
     },
     {
-      text: "Sandra sets a high bar and focuses on the exact areas my daughter needed help with. The improvement in writing has been noticeable.",
+      text: "Ms. M sets a high bar and focuses on the exact areas my daughter needed help with. The improvement in writing has been noticeable.",
       author: "Parent of high school student",
     },
     {
-      text: "Sandra is patient, clear, and incredibly encouraging. My child's confidence improved quickly, and we saw progress week to week.",
+      text: "Ms. M is patient, clear, and incredibly encouraging. My child's confidence improved quickly, and we saw progress week to week.",
       author: "Parent of middle school student",
     },
     {
-      text: "I was nervous speaking English, but Sandra made me feel comfortable right away. I am speaking more confidently at work now.",
+      text: "I was nervous speaking English, but Ms. M made me feel comfortable right away. I am speaking more confidently at work now.",
       author: "Adult professional",
     },
     {
-      text: "My son actually looks forward to lessons. Sandra is warm, but she also holds him accountable, which is exactly what we needed.",
+      text: "My son actually looks forward to lessons. Ms. M is warm, but she also holds him accountable, which is exactly what we needed.",
       author: "Parent of elementary student",
     },
     {
