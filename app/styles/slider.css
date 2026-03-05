@@ -1,0 +1,31 @@
+.embla__container {
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--color-white), 0.5);
+  background-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__button--disabled {
+  opacity: 0.5;
+}
+
+.embla__live-region {
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+}

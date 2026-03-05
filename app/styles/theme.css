@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@theme {
+  --font-sans: "Inter", "sans-serif";
+  --font-serif: "Gambarino", "serif";
+  --font-cursive: "Oooh Baby","sans-serif";
+  
+  --color-background: #FFF6ED;
+  --color-foreground: #1A2A4F;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A2A4F;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A2A4F;
+  --color-primary: #1A2A4F;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FBE7AC;
+  --color-secondary-foreground: #1A2A4F;
+  --color-tertiary: #C3DDEB;
+  --color-muted: #FFFFFF;
+  --color-muted-foreground: #5c5c5c;
+  --color-accent: #F4C430;
+  --color-accent-foreground: #1A2A4F;
+}
+
+@layer base {
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  label {
+    font-size: var(--text-base);
+    @apply font-medium;
+  }
+
+  button {
+    font-size: var(--text-base);
+    @apply font-medium;  
+  }
+
+  input {
+    font-size: var(--text-base);
+  }
+
+  section {
+    @apply relative w-full py-20 md:py-24 lg:py-32 px-6 md:px-10 lg:px-24;
+  }
+}
