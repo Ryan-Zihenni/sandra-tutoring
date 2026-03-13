@@ -40,7 +40,7 @@ export default function Navigation() {
                 style={{ objectPosition: "center 20%" }}
               />
             </div>
-            <span className="font-serif text-3xl md:text-4xl tracking-tight leading-none">
+            <span className="font-serif text-xl tracking-tight">
               Sandra Mastromarino
             </span>
           </div>
