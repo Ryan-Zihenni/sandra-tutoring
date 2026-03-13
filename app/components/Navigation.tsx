@@ -3,7 +3,7 @@ import { scrollToSection } from "../utils/navigation"
 import Button from "./Button"
 import Image from "next/image"
 import { ListIcon, XIcon } from "@phosphor-icons/react"
-import imgPortraitImg from "../../public/images/sandra_mastromarino.png"
+import imgPortraitImg from "../../public/images/mom-picture.jpeg"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
