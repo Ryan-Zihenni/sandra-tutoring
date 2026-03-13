@@ -30,15 +30,14 @@ export default function Navigation() {
     <nav className="fixed top-0 z-20 w-full pt-4 px-4 md:px-10 lg:px-16">
       <div className="bg-white max-w-6xl mx-auto rounded-3xl border border-neutral-200 shadow-xs">
         <div className="flex items-center justify-between pl-6 pr-3 py-3">
-          {/* Logo */}
-          <div className="flex items-center gap-2.5">
-            <div className="relative w-7 h-7 rounded-full overflow-hidden">
+          <div className="flex items-center gap-4">
+            <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0">
               <Image
                 alt="Sandra Mastromarino"
                 src={imgPortraitImg}
                 fill
-                className="object-cover"
-                style={{ objectPosition: "center 18%" }}
+                className="object-cover scale-[1.35]"
+                style={{ objectPosition: "center 20%" }}
               />
             </div>
             <span className="font-serif text-xl tracking-tight">
@@ -46,7 +45,6 @@ export default function Navigation() {
             </span>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
             <button
               onClick={() => handleMenuClick("meet-your-tutor")}
@@ -69,12 +67,10 @@ export default function Navigation() {
           </div>
 
           <div className="flex gap-1">
-            {/* CTA Button */}
             <div className="hidden md:block">
               <Button />
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -85,7 +81,6 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-neutral-200 px-6 py-4">
             <div className="flex flex-col gap-2">
