@@ -6,26 +6,25 @@ import { ListIcon, XIcon } from "@phosphor-icons/react"
 import imgPortraitImg from "../../public/images/mom-picture.jpeg"
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setIsMenuOpen(false);
+        setIsMenuOpen(false)
       }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    }
 
-  // Handle menu link clicks
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   const handleMenuClick = (sectionId: string) => {
-    setIsMenuOpen(false);
+    setIsMenuOpen(false)
     setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 100);
-  };
+      scrollToSection(sectionId)
+    }, 100)
+  }
 
   return (
     <nav className="fixed top-0 z-20 w-full pt-4 px-4 md:px-10 lg:px-16">
@@ -33,11 +32,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between pl-6 pr-3 py-3">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full overflow-hidden">
+            <div className="relative w-7 h-7 rounded-full overflow-hidden">
               <Image
                 alt="Sandra Mastromarino"
-                className="w-full h-full object-cover"
                 src={imgPortraitImg}
+                fill
+                className="object-cover"
+                style={{ objectPosition: "center 18%" }}
               />
             </div>
             <span className="font-serif text-xl tracking-tight">
@@ -69,7 +70,9 @@ export default function Navigation() {
 
           <div className="flex gap-1">
             {/* CTA Button */}
-            <div className="hidden md:block"><Button /></div>
+            <div className="hidden md:block">
+              <Button />
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -110,5 +113,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  );
+  )
 }
