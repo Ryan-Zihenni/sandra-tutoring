@@ -31,13 +31,13 @@ export default function Navigation() {
       <div className="bg-white max-w-6xl mx-auto rounded-3xl border border-neutral-200 shadow-xs">
         <div className="flex items-center justify-between pl-6 pr-3 py-3">
           <div className="flex items-center gap-4">
-            <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0">
+            <div className="w-14 h-14 overflow-hidden rounded-full shrink-0">
               <Image
                 alt="Sandra Mastromarino"
                 src={imgPortraitImg}
-                fill
-                className="object-cover"
-                style={{ objectPosition: "center 18%" }}
+                width={56}
+                height={56}
+                className="w-14 h-14 rounded-full object-cover object-top"
               />
             </div>
             <span className="font-serif text-xl tracking-tight">
