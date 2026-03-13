@@ -36,8 +36,8 @@ export default function Navigation() {
                 alt="Sandra Mastromarino"
                 src={imgPortraitImg}
                 fill
-                className="object-cover scale-[1.35]"
-                style={{ objectPosition: "center 20%" }}
+                className="object-cover"
+                style={{ objectPosition: "center 18%" }}
               />
             </div>
             <span className="font-serif text-xl tracking-tight">
